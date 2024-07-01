@@ -26,4 +26,28 @@ class categoriacontroller extends Controller
         }
         return response()->json($categoria,200);
     }
+
+    public function insterCategoria(Request $request){
+        $categoria = categoria::create($request->all());
+        return response($categoria,200);
+    } 
+
+    public function updateCategoria(Request $request, $id){
+        $categoria = categoria::find($id);
+        if(is_null($categoria)){
+            return response()->json(['Mensaje' => 'Categoria ID no encontrada'],404);
+        }
+        $categoria->update($request->all());
+        return response($categoria,200);
+    }
+
+    public function deleteCategoria($id){
+        $categoria = categoria::find($id);
+        if(is_null($categoria)){
+            return response()->json(['Mensaje' => 'Categoria ID no encontrada'],404);
+        }
+        $categoria->delete();
+        return response()->json(['mensaje'=>'se elimino el registro'],200);
+    }
+
 }
