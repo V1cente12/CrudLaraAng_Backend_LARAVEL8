@@ -29,4 +29,4 @@ Route::post('addCategoria','App\Http\Controllers\categoriacontroller@insterCateg
 
 Route::put('updateCategoria/{id}','App\Http\Controllers\categoriacontroller@updateCategoria');
 
-Route::delete  ('deleteCategoria/{id}','App\Http\Controllers\categoriacontroller@deleteCategoria');
+Route::delete  ('deleteCategoriabyid/{id}','App\Http\Controllers\categoriacontroller@deleteCategoria');
