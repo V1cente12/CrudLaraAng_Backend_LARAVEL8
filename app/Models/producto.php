@@ -11,6 +11,7 @@ class producto extends Model
     protected $fillable = [
         'id',
         'cat_nom',
+        'cat_nom2',
         'cat_obs'
     ];
 }
