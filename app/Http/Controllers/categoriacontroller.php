@@ -21,8 +21,8 @@ class categoriacontroller extends Controller
     }
 
     public function getCategoriabyCat_nom($cat_nom){
-        $categoria = categoria::where('cat_nom', $cat_nom)->first();
-        if(is_null($categoria)){
+        $categoria = categoria::where('cat_nom', $cat_nom)->get();
+        if($categoria->isEmpty()){
             return response()->json(['Mensaje' => 'Categoria cat_nom no encontrada'],404);
         }
         return response()->json($categoria,200);
